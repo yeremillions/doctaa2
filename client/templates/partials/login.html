@@ -1,0 +1,22 @@
+<template name="login">
+    <div class="row">
+        <div class="col-lg-6 col-md-8 col-sm-10 mx-auto" >
+            <div class="card card-login">
+                <div class="card-header">
+                    <h4>User Login</h4>
+                </div>
+                <div class="card-body">
+                    <form class="form-signin">
+                        <label for="email" class="sr-only">Email Address</label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Email Address">
+                        <label for="password" class="sr-only">Password</label>
+                        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+                        <button type="submit" id="login-btn" class="ui button blue fluid">Log In</button>
+                        &emsp;
+                        <p>No Account? <a href="{{pathFor 'register'}}">Create Account</a></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>

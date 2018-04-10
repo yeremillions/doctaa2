@@ -1,0 +1,33 @@
+<template name="comments">
+
+    {{#each comment}}
+        <!-- Comment -->
+        <div class="comment">
+            <div class="row">
+                <div class=".col-sm-6 .col-md-5 .col-lg-6" id="info">
+                    <h1 class="joke-title">{{questionName}}</h1>
+                    <p class="meta">Author: {{author}}</p>
+                    <p class="meta">Posted On: {{date}}</p>
+                </div>
+                <div class=".col-sm-6 .col-md-5 .col-md-offset-2 .col-lg-6 .col-lg-offset-0" id="vote">
+                    <i class="hand point down outline icon" id="downvote"></i>
+                    <i class="hand point up outline icon" id="upvote"></i>
+                </div>
+                <div class="row" id="score">
+                    <h3 class="count red block">{{upvoteScore}}</h3>
+                    <h3 class="count yellow block">{{downvoteScore}}</h3>
+                </div>
+            </div>
+
+            <p class="regular joke-desc">"{{commentPost}}"</p>
+
+            {{> commentForm}}
+
+        </div>
+        <!-- End Comment -->
+    {{else}}
+        &emsp;
+        <p> No one has responded to this question. Be the first to respond!</p>
+    {{/each}}
+
+</template>

@@ -1,0 +1,27 @@
+<template name="doctors">
+    <h1>Add Doctors to Your Care Team</h1>
+    <ul class="list-group">
+        {{#each users}}
+            {{> doctor}}
+        {{/each}}
+    </ul>
+</template>
+
+<template name="doctor">
+    {{#if currentUser}}
+
+    <li class="list-group-item">
+            {{username}}
+            <button class="btn btn-outline-primary pull-right add" id="chat-button">
+                 Chat with Doctor
+            </button>
+        &emsp;&emsp;&emsp;
+            <button class="btn btn-outline-primary pull-right add">
+                {{#if alreadyFavourited _id}} Remove from Care Team {{else}} Add to Care Team {{/if}}
+            </button>
+    </li>
+
+        {{else}}
+        <p>You have to login to use this feature! <a href="{{pathFor 'login'}}">Go to login</a></p>
+        {{/if}}
+</template>

@@ -1,0 +1,25 @@
+<template name="commentForm">
+    {{#if currentUser}}
+        <!-- Comment Form-->
+        <div id="commentForm-wrap col-lg-6 col-md-8 col-sm-10 mx-auto">
+
+            <form class="comment-post">
+                <label for="postReply" class="sr-only">Question Post</label>
+                <textarea name="postReply" id="postReply" class="form-control" placeholder="Respond to this question!" rows="5"></textarea>
+                <button class="ui button blue fluid" type="submit">Post Reply</button>
+            </form>
+        </div>
+
+        <hr>
+        <!-- End Comment Form-->
+    {{else}}
+        <!-- Redirect Guest to Login Form-->
+        <div id="questionForm-wrap">
+            <form class="question-post">
+                <h2 class="form-signin-heading">Log in to post a response</h2>
+                <a href="{{pathFor 'login'}}" class="ui button positive" id="login-redir">Login</a>
+            </form>
+        </div>
+        <!-- End Redirect Guest to Login Form-->
+    {{/if}}
+</template>
